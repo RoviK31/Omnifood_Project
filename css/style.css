@@ -229,6 +229,8 @@ background-color: #fae5d3;
 
 .meal-tags{
   margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
 }
 
 .tag{

@@ -46,6 +46,12 @@ allLinks.forEach(function(link){
 
 const sectionHeroEl = document.querySelector('.section-hero')
 
+const option= {
+  // in the viewport
+  root:null,
+  threshold: 0,
+  rootMargin: "-80px",
+}
 
 const obs = new IntersectionObserver(function(entries){
   const ent = entries[0];
@@ -56,13 +62,8 @@ const obs = new IntersectionObserver(function(entries){
   if(ent.isIntersecting){
     document.body.classList.remove('sticky')
   }
-},{
-  // in the viewport
-  root:null,
-  threshold: 0,
-  rootMargin: "-80px",
-})
-obs.observe()
+}, option)
+obs.observe(sectionHeroEl)
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
